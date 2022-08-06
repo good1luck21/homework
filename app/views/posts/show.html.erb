@@ -1,0 +1,17 @@
+<h1><%= @post.title %>の詳細ページ</h1>
+
+<p>
+  <label>content:</label>
+  <%= @post.content %>
+</p>
+
+<h2>いいねしてくれた人たち</h2>
+<% if @post.likes.count > 0 %>
+  <% @post.likes.each do | like | %>
+    <p>
+      <%= like.user.name %>さん
+    </p>
+  <% end %>
+<% else %>
+  <p>いいねしてくれた人はいません</p>
+<% end %>
